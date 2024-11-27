@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework> <!-- Or your desired framework -->
+    <Version>1.0.0</Version>
+    <Authors>Haitham Basim</Authors>
+    <Company></Company>
+    <PackageId>NestPayDotNet</PackageId>
+    <Description></Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression> <!-- Or other licenses -->
+    <PackageProjectUrl>https://github.com/haithambasim/NestPayDotNet</PackageProjectUrl>
+  </PropertyGroup>
+
+</Project>
