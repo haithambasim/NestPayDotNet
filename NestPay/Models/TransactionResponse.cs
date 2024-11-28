@@ -1,3 +1,4 @@
+using NestPayDotNet.NestPay.Models;
 using System.Xml.Serialization;
 
 namespace NestPay.Models
@@ -42,5 +43,11 @@ namespace NestPay.Models
         /// </summary>
         [XmlElement("ErrMsg")]
         public string ErrorMessage { get; set; }
+
+        /// <summary>
+        /// Represents the extra information returned in the response from the NestPay API after processing a transaction.
+        /// </summary>
+        [XmlElement("Extra")]
+        public TransactionResponseExtra Extra { get; set; }
     }
 }
