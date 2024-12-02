@@ -49,5 +49,23 @@ namespace NestPay.Models
         /// </summary>
         [XmlElement("Extra")]
         public TransactionResponseExtra Extra { get; set; }
+
+        /// <summary>
+        /// Indicates whether the transaction was successful.
+        /// </summary>
+        [XmlIgnore]
+        public bool IsSuccess => Response == "Approved";
+
+        /// <summary>
+        /// Indicates whether an error occurred during the transaction process.
+        /// </summary>
+        [XmlIgnore]
+        public bool IsGatewayError => Response == "Error";
+
+        /// <summary>
+        /// Indicates whether the transaction was declined.
+        /// </summary>
+        [XmlIgnore]
+        public bool IsDeclined => Response == "Declined";
     }
 }

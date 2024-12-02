@@ -1,7 +1,8 @@
-using System.Text;
-using System.Xml.Serialization;
 using NestPay.Exceptions;
 using NestPay.Models;
+using NestPayDotNet.NestPay.Utils;
+using System.Text;
+using System.Xml.Serialization;
 
 namespace NestPay
 {
@@ -35,11 +36,24 @@ namespace NestPay
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new NestPayException($"Error: {response.StatusCode}");
+                throw new HttpRequestException($"HTTP request failed with status code {response.StatusCode}");
             }
 
             var xmlResponse = await response.Content.ReadAsStringAsync();
-            return DeserializeFromXml<TransactionResponse>(xmlResponse);
+            var result = DeserializeFromXml<TransactionResponse>(xmlResponse);
+
+            if (result.IsDeclined)
+            {
+                throw new NestPayTransactionException(ErrorHelper.GetErrorMessage(result.Extra.ErrorCode, request.Lang));
+            }
+
+            if (result.IsGatewayError)
+            {
+                throw new NestPayGatewayException(ErrorHelper.GetErrorMessage(result.Extra.ErrorCode, request.Lang));
+            }
+
+
+            return result;
         }
 
         private static string SerializeToXml<T>(T obj)

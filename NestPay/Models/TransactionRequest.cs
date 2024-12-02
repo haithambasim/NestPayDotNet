@@ -83,5 +83,11 @@ namespace NestPay.Models
         /// </summary>
         [XmlElement("Cvv2Val")]
         public string CardCvv { get; set; }
+
+        /// <summary>
+        /// Languafe code for the error messages. ar for Arabic, en for English.
+        /// </summary>
+        [XmlIgnore]
+        public string Lang { get; set; } = "en";
     }
 }
