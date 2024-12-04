@@ -23,8 +23,8 @@ using Newtonsoft.Json;
 
 
 // NestPay merchant Information
-const string NESTPAY_URL = "YOUR_MERCHANT_API_URL"
-const string MERCHANT_ID = "YOUR_MERCHANT_ID"
+const string NESTPAY_URL = "YOUR_MERCHANT_API_URL";
+const string MERCHANT_ID = "YOUR_MERCHANT_ID";
 const string MERCHANT_USERNAME = "YOUR_MERCHANT_USERNAME";
 const string MERCHANT_PASSWORD = "YOUR_MERCHANT_PASSWORD";
 
