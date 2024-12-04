@@ -6,11 +6,6 @@ namespace NestPayDotNet.Exceptions
     {
         public string ErrorCode { get; set; }
         public string Detail { get; set; }
-        public NestPayGatewayException(string message, string errorCode, string detail) : base(message)
-        {
-            ErrorCode = errorCode;
-            Detail = detail;
-        }
 
         public NestPayGatewayException(ErrorMessage msg) : base(msg.Error)
         {
