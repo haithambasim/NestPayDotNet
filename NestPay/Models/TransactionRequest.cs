@@ -1,3 +1,5 @@
+using NestPay.Enums;
+using NestPayDotNet.NestPay.Enums;
 using System.Xml.Serialization;
 
 namespace NestPay.Models
@@ -54,7 +56,7 @@ namespace NestPay.Models
         /// For example, 949 represents Turkish Lira. This is mandatory for all transactions.
         /// </summary>
         [XmlElement("Currency")]
-        public int Currency { get; set; }
+        public Currency Currency { get; set; }
 
         /// <summary>
         /// The unique order identifier. If not provided, the system will generate a unique order ID.
@@ -88,6 +90,6 @@ namespace NestPay.Models
         /// Languafe code for the error messages. ar for Arabic, en for English.
         /// </summary>
         [XmlIgnore]
-        public string Lang { get; set; } = "en";
+        public Language Lang { get; set; } = Language.English;
     }
 }

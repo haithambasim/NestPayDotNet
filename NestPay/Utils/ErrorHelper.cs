@@ -1,4 +1,5 @@
-﻿using NestPayDotNet.NestPay.Models;
+﻿using NestPayDotNet.NestPay.Enums;
+using NestPayDotNet.NestPay.Models;
 using NestPayDotNet.NestPay.Static;
 
 namespace NestPayDotNet.NestPay.Utils
@@ -11,16 +12,16 @@ namespace NestPayDotNet.NestPay.Utils
         /// <param name="errorCode">The error code returned by the API.</param>
         /// <param name="lang">The language for the error message ("en" for English, "ar" for Arabic).</param>
         /// <returns>The translated error message, or a default message if the code is not found.</returns>
-        public static ErrorMessage GetErrorMessage(string errorCode, string lang)
+        public static ErrorMessage GetErrorMessage(string errorCode, Language lang)
         {
             Dictionary<string, ErrorMessage> translations;
 
-            switch (lang.ToLower())
+            switch (lang)
             {
-                case "ar":
+                case Language.Arabic:
                     translations = ErrorMessages.Arabic;
                     break;
-                case "en":
+                case Language.English:
                 default:
                     translations = ErrorMessages.English;
                     break;
@@ -32,7 +33,7 @@ namespace NestPayDotNet.NestPay.Utils
                 ? message
                 : new ErrorMessage
                 {
-                    Error = lang == "ar" ? "خطأ غير معروف" : "Unknown error",
+                    Error = lang == Language.Arabic ? "خطأ غير معروف" : "Unknown error",
                 };
 
             result.Code = errorCode;
