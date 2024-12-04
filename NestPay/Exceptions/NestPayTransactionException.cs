@@ -1,6 +1,6 @@
-using NestPayDotNet.NestPay.Models;
+using NestPayDotNet.Models;
 
-namespace NestPay.Exceptions
+namespace NestPayDotNet.Exceptions
 {
     public class NestPayTransactionException : Exception
     {

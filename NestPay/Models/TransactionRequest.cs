@@ -1,8 +1,7 @@
-using NestPay.Enums;
-using NestPayDotNet.NestPay.Enums;
+using NestPayDotNet.Enums;
 using System.Xml.Serialization;
 
-namespace NestPay.Models
+namespace NestPayDotNet.Models
 {
     /// <summary>
     /// Represents a transaction request sent to the NestPay API.

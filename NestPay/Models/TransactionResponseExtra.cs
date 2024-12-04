@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace NestPayDotNet.NestPay.Models
+namespace NestPayDotNet.Models
 {
     /// <summary>
     /// Represents the extra information returned in the response from the NestPay API after processing a transaction.

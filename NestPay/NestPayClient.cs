@@ -1,10 +1,10 @@
-using NestPay.Exceptions;
-using NestPay.Models;
-using NestPayDotNet.NestPay.Utils;
+using NestPayDotNet.Exceptions;
+using NestPayDotNet.Models;
+using NestPayDotNet.Utils;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace NestPay
+namespace NestPayDotNet
 {
     public class NestPayClient
     {

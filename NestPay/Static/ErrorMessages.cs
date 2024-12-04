@@ -1,6 +1,6 @@
-﻿using NestPayDotNet.NestPay.Models;
+﻿using NestPayDotNet.Models;
 
-namespace NestPayDotNet.NestPay.Static
+namespace NestPayDotNet.Static
 {
     /// <summary>
     /// Contains error codes and their English and Arabic translations.

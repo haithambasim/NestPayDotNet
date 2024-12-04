@@ -1,9 +1,8 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using NestPayDotNet.NestPay.Enums;
-using NestPayDotNet.NestPay.Models;
-using NestPayDotNet.NestPay.Static;
+﻿using NestPayDotNet.Enums;
+using NestPayDotNet.Models;
+using NestPayDotNet.Static;
 
-namespace NestPayDotNet.NestPay.Utils
+namespace NestPayDotNet.Utils
 {
     public static class ErrorHelper
     {

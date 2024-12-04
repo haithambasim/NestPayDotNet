@@ -1,4 +1,4 @@
-﻿namespace NestPayDotNet.NestPay.Enums
+﻿namespace NestPayDotNet.Enums
 {
     public enum Language
     {

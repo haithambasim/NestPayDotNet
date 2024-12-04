@@ -1,4 +1,4 @@
-﻿namespace NestPayDotNet.NestPay.Models
+﻿namespace NestPayDotNet.Models
 {
     public class ErrorMessage
     {

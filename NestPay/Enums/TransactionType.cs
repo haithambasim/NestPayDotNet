@@ -1,4 +1,4 @@
-namespace NestPay.Enums
+namespace NestPayDotNet.Enums
 {
     /// <summary>
     /// Defines the types of transactions supported by the NestPay API.

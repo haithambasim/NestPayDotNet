@@ -1,4 +1,4 @@
-namespace NestPay.Enums
+namespace NestPayDotNet.Enums
 {
     public enum Currency
     {
