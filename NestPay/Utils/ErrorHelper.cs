@@ -1,4 +1,5 @@
-﻿using NestPayDotNet.NestPay.Enums;
+﻿using System.Security.Cryptography.X509Certificates;
+using NestPayDotNet.NestPay.Enums;
 using NestPayDotNet.NestPay.Models;
 using NestPayDotNet.NestPay.Static;
 
@@ -14,7 +15,7 @@ namespace NestPayDotNet.NestPay.Utils
         /// <returns>The translated error message, or a default message if the code is not found.</returns>
         public static ErrorMessage GetErrorMessage(string errorCode, Language lang)
         {
-            Dictionary<string, ErrorMessage> translations;
+            List<ErrorMessage> translations;
 
             switch (lang)
             {
@@ -27,18 +28,12 @@ namespace NestPayDotNet.NestPay.Utils
                     break;
             }
 
-
             // Return the error message if found, otherwise a default message
-            var result = translations.TryGetValue(errorCode, out var message)
-                ? message
-                : new ErrorMessage
-                {
-                    Error = lang == Language.Arabic ? "خطأ غير معروف" : "Unknown error",
-                };
+            var message =
+                translations.FirstOrDefault(x => x.Code == errorCode)
+                ?? translations.FirstOrDefault(x => x.Code is null);
 
-            result.Code = errorCode;
-
-            return result;
+            return message;
         }
     }
 }
