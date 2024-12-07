@@ -27,6 +27,30 @@ namespace NestPayDotNet.Models
         public string OrderId { get; set; }
 
         /// <summary>
+        /// The unique identifier of the group associated with the transaction.
+        /// </summary>
+        [XmlElement("GroupId")]
+        public string GroupId { get; set; }
+
+        /// <summary>
+        /// Host reference number
+        /// </summary>
+        [XmlElement("HostRefNum")]
+        public string HostRefNum { get; set; }
+
+        /// <summary>
+        /// Host preauthorization code
+        /// </summary>
+        [XmlElement("AuthCode")]
+        public string AuthCode { get; set; }
+
+        /// <summary>
+        /// Transaction Id: This is the unique identifier of the transaction.
+        /// </summary>
+        [XmlElement("TransId")]
+        public string TransId { get; set; }
+
+        /// <summary>
         /// The transaction status code returned by the system.
         /// Common values include:
         /// - "00": Transaction authorized successfully.
